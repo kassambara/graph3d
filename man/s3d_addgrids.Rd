@@ -42,6 +42,11 @@ Users who want to extend an existing scatterplot3d graphic with the
 \examples{
 library("scatterplot3d")
 data(iris)
+
+# Basic 3d graphics
+scatterplot3d(iris[,1:3], pch = 16)
+
+# Remove box and add grids
 scatterplot3d(iris[, 1:3], pch = 16, grid = TRUE, box = FALSE)
 s3d_addgrids(iris[, 1:3], grid = c("xy", "xz", "yz"))
 }

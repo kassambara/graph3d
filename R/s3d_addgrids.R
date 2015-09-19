@@ -23,8 +23,14 @@
 #' @examples
 #' library("scatterplot3d")
 #' data(iris)
+#'
+#' # Basic 3d graphics
+#' scatterplot3d(iris[,1:3], pch = 16)
+#'
+#' # Remove box and add grids
 #' scatterplot3d(iris[, 1:3], pch = 16, grid = TRUE, box = FALSE)
 #' s3d_addgrids(iris[, 1:3], grid = c("xy", "xz", "yz"))
+#'
 #' @export
 s3d_addgrids <- function(x, y=NULL, z=NULL, grid = TRUE,
                     col.grid = "grey", lty.grid = par("lty"),
