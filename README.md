@@ -6,9 +6,8 @@ Installation
 ------------
 
 ``` r
-
 if(!require(devtools)) install.packages("devtools")
-devtools::install_github("kassambara/factoextra")
+devtools::install_github("kassambara/graph3d")
 ```
 
 Geting started
