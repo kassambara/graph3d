@@ -1,0 +1,17 @@
+Package: graph3d
+Type: Package
+Title: Customize 3D graphs in R
+Version: 1.0.0
+Date: 2015-09-19
+Authors@R: c(
+    person("Alboukadel", "Kassambara", role = c("aut", "cre"), email = "alboukadel.kassambara@gmail.com"))
+Description:
+    Utilities for easily customizing 3D graphs in R.
+License: GPL-3
+LazyData: true
+Suggests:
+    knitr,
+    scatterplot3d
+VignetteBuilder: knitr
+URL: http://www.sthda.com
+BugReports: https://github.com/kassambara/graph3d/issues
