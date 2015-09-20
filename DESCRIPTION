@@ -9,6 +9,9 @@ Description:
     Utilities for easily customizing 3D graphs in R.
 License: GPL-3
 LazyData: true
+Imports:
+    grDevices,
+    plot3D
 Suggests:
     knitr,
     scatterplot3d
