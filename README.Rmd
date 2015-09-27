@@ -36,7 +36,60 @@ library(graph3d)
 ## Geting started
      
      
+### Quick RGL scater plot
+    
+    
+```{r}
+require(rgl)
+data(iris)
+x <- iris$Sepal.Length
+y <- iris$Petal.Length
+z <- iris$Sepal.Width
+```
+
+    
+```{r, echo = FALSE}
+knitr::knit_hooks$set(rgl=knitr::hook_rgl)
+```
+    
+    
+```{r, rgl = TRUE}
+rgl_scatter(iris, groups = iris$Species, add.ellipse = TRUE,
+            data.scale = TRUE)
+```
+    
+
+Remove the bounding box:   
+    
+```{r, rgl = TRUE}
+rgl_scatter(iris, groups = iris$Species, show.bbox = FALSE)
+```
+    
+    
+Add regression planes
+    
+    
+```{r, rgl = TRUE}
+rgl_scatter(iris, groups = iris$Species, show.bbox = FALSE, add.reg.planes = TRUE)
+```
+    
+    
+    
+### Build customized RGL plots
+     
+     
+```{r, rgl = TRUE}
+rgl_init()
+rgl.spheres(x, y, z, r = 0.2, color = get_colors(iris$Species))
+rgl_add_axes(x, y, z, show.bbox = TRUE)
+rgl_add_ellipses(x, y, z, groups = iris$Species)
+aspect3d(1,1,1)
+```
+     
+     
+     
 ### Add grids to a scatterplot3d
+     
      
 The function **s3d_addgrids()** can be used as follow:   
     
