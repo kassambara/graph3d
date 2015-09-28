@@ -12,10 +12,10 @@ Imports:
     grDevices,
     mgcv,
     plot3D,
-    scatterplot3d
+    rgl
 Suggests:
     knitr,
-    rgl
+    scatterplot3d
 VignetteBuilder: knitr
 URL: http://www.sthda.com
 BugReports: https://github.com/kassambara/graph3d/issues

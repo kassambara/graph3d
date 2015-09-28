@@ -5,6 +5,7 @@
 \alias{rgl_add_axes}
 \alias{rgl_add_ellipses}
 \alias{rgl_add_linear_planes}
+\alias{rgl_group_labels}
 \alias{rgl_scatter}
 \title{RGL scatter plot}
 \usage{
@@ -28,6 +29,9 @@ rgl_add_ellipses(x, y = NULL, z = NULL, groups = NULL,
 rgl_add_linear_planes(x, y = NULL, z = NULL, groups = NULL,
   surface.col = "steelblue", grid.col = "black", plane.fill = TRUE,
   plane.grid = FALSE, droplines = TRUE, smooth = FALSE, ...)
+
+rgl_group_labels(x, y = NULL, z = NULL, groups, group.col = "black",
+  cex = 2, ...)
 }
 \arguments{
 \item{x,y,z}{the coordinates of the points to draw.
@@ -54,7 +58,7 @@ so that the minimum of each axis = 0 and the maximum = 1}
 \item{show.bbox}{add the bounding box decoration.}
 
 \item{...}{other arguments to be passed to the function rgl_add_axis(),
-rgl_add_ellipses() or rgl_add_linear_planes().}
+rgl_add_ellipses(), rgl_add_linear_planes() or rgl_group_labels().}
 
 \item{axis.col}{colors for the 3 axes.}
 
@@ -93,6 +97,8 @@ This is used to control the size of the ellipsoid.}
 \item{droplines}{logical values. If TRUE, droplines are shown from regression surfaces to the points.}
 
 \item{smooth}{logical value. If TRUE, smoothed regression planes are drawn.}
+
+\item{cex}{the size of text labels}
 }
 \description{
 RGL scatter plot. \cr\cr
@@ -102,6 +108,7 @@ RGL scatter plot. \cr\cr
 \item get_colors(): Get colors for the different levels of a factor variable.
 \item rgl_add_ellipses(): Add an ellipse of concentration.
 \item rgl_add_linear_planes(): Add regression planes
+\item rgl_group_labels(): Show the label of each group
 }
 }
 \examples{

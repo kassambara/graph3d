@@ -10,6 +10,7 @@ NULL
 #' \item get_colors(): Get colors for the different levels of a factor variable.
 #' \item rgl_add_ellipses(): Add an ellipse of concentration.
 #' \item rgl_add_linear_planes(): Add regression planes
+#' \item rgl_group_labels(): Show the label of each group
 #' }
 #'
 #' @param x,y,z the coordinates of the points to draw.
@@ -88,7 +89,7 @@ NULL
 #' @param data.scale logical value. If TRUE, the coordinates (x, y, z) is scaled
 #'  so that the minimum of each axis = 0 and the maximum = 1
 #' @param ... other arguments to be passed to the function rgl_add_axis(),
-#' rgl_add_ellipses() or rgl_add_linear_planes().
+#' rgl_add_ellipses(), rgl_add_linear_planes() or rgl_group_labels().
 #' @export
 rgl_scatter <- function(x, y = NULL, z = NULL, groups = NULL, sphere.size = 1,
                         point.col = "grey", group.col = NULL,
@@ -150,7 +151,7 @@ rgl_scatter <- function(x, y = NULL, z = NULL, groups = NULL, sphere.size = 1,
 
   # Add group labels
   if(!is.null(groups) & show.group.labels)
-    .rgl_group_labels(x, y, z, groups = groups, group.col = group.col)
+    rgl_group_labels(x, y, z, groups = groups, group.col = group.col)
 
 
   # Finalize the plot
@@ -380,14 +381,10 @@ rgl_add_linear_planes <- function(x, y = NULL, z=NULL, groups = NULL, surface.co
 
 }
 
-
-
-# Show the label of each group
-#  groups a factor variable specifing the groups of the observations
-#  group.col a vector of color(s) to be used for the groups
-#  cex the size of text
-# ... other arguments to be passed to text3d
-.rgl_group_labels <- function(x, y = NULL, z = NULL,
+#' @param cex the size of text labels
+#' @rdname rgl_scatter
+#' @export
+rgl_group_labels <- function(x, y = NULL, z = NULL,
                              groups, group.col = "black", cex = 2, ...)
 {
   # Coordinates
